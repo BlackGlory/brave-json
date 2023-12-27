@@ -52,8 +52,6 @@
     "vitest": "^0.34.1"
   },
   "dependencies": {
-    "circular-json-es6": "^2.0.2",
-    "dynamic-scope": "^0.1.2",
-    "type-detect": "^4.0.8"
+    "@blackglory/prelude": "^0.3.4"
   }
 }
