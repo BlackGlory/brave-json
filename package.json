@@ -1,0 +1,31 @@
+{
+  "name": "brave-json",
+  "version": "0.1.5",
+  "description": "As much as possible to serialize JavaScript object to JSON",
+  "main": "lib/brave-json.js",
+  "typings": "lib/brave-json.d.ts",
+  "repository": "git@github.com:BlackGlory/brave-json.git",
+  "author": "BlackGlory <woshenmedoubuzhidao@blackglory.me>",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "yarn lint && yarn test",
+    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "test": "jest --coverage --config jest.config.json",
+    "build": "tsc --outDir lib"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/type-detect": "^4.0.1",
+    "coveralls": "^3.0.1",
+    "husky": "^0.14.3",
+    "jest": "^23.0.1",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "circular-json-es6": "^2.0.2",
+    "dynamic-scope": "^0.1.2",
+    "type-detect": "^4.0.8"
+  }
+}
