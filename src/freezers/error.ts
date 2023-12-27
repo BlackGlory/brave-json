@@ -17,7 +17,9 @@ const self: any = (function(this: any) {
     return global
   } else if (typeof window !== 'undefined') {
     return window
+    // @ts-ignore
   } else if (typeof self !== 'undefined') {
+    // @ts-ignore
     return self
   }
   return this

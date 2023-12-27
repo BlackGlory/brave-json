@@ -1,11 +1,12 @@
 'use strict'
 
-import getType = require('type-detect')
-import { stringify, parse } from '../src/brave-json'
+import getType from 'type-detect'
+import { stringify, parse } from '@src/index.js'
 
 describe('stringify & parse', () => {
   test('Circular structure', () => {
     const a = {}
+    // @ts-ignore
     a.a = a
     const result = parse(stringify(a))
 
@@ -25,7 +26,7 @@ describe('stringify & parse', () => {
     const result = parse(stringify(str))
 
     expect(getType(result)).toEqual('String')
-    expect(result).toEqual('str')
+    expect(result.toString()).toEqual('str')
   })
 
   test('Set', () => {
@@ -266,7 +267,7 @@ describe('stringify & parse', () => {
 
     test('CustomError', () => {
       class CustomError extends Error {
-        constructor(...args) {
+        constructor(...args: string[]) {
           super(...args)
           this.name = 'CustomError'
         }
