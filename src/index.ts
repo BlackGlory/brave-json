@@ -1,4 +1,4 @@
-import { JSONValue, isArray, isBoolean, isNumber, isntNaN, isFinite, go, isString, isPlainObject } from '@blackglory/prelude'
+import { JSONValue, isArray, isBoolean, isNumber, isntNaN, isFinite, go, isString, isPlainObject, isNull } from '@blackglory/prelude'
 
 type IConvertedValue = [symbol: string, value: JSONValue]
 
@@ -42,6 +42,7 @@ export class BraveJSON {
         isArray(rawValue) ||
         isBoolean(rawValue) ||
         isString(rawValue) ||
+        isNull(rawValue) ||
         (isNumber(rawValue) && isntNaN(rawValue) && isFinite(rawValue)) ||
         isPlainObject(rawValue)
       ) {
